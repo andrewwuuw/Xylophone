@@ -20,6 +20,9 @@ class ViewController: UIViewController {
     @IBAction func keyPressed(_ sender: UIButton) {
         guard let senderTitle = sender.currentTitle else { return }
         playSound(playFrom: senderTitle)
+        
+        sender.alpha = 0.5
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) { sender.alpha = 1 }
     }
     
     //MARK: - Private methods
